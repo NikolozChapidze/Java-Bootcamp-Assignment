@@ -1,0 +1,51 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class customers {
+   customer_email: varchar(255)
+   customer_name: varchar(255)
+   customer_password: varchar(255)
+   customer_id: bigint
+}
+class order_products {
+   op_quantity: integer
+   order_id: bigint
+   product_id: bigint
+   order_product_id: bigint
+}
+class orders {
+   order_table: integer
+   order_date: date
+   servant_id: bigint
+   customer_id: bigint
+   order_id: bigint
+}
+class products {
+   product_description: varchar(255)
+   product_name: varchar(255)
+   product_price: double precision
+   restaurant_id: bigint
+   product_id: bigint
+}
+class restaurants {
+   restaurant_email: varchar(255)
+   restaurant_name: varchar(255)
+   restaurant_phone: varchar(255)
+   restaurant_address: varchar(255)
+   restaurant_id: bigint
+}
+class servants {
+   name: varchar(255)
+   last_name: varchar(255)
+   servant_id: bigint
+}
+
+order_products  -[#595959,plain]-^  orders         : "order_id"
+order_products  -[#595959,plain]-^  products       : "product_id"
+orders          -[#595959,plain]-^  customers      : "customer_id"
+orders          -[#595959,plain]-^  servants       : "servant_id"
+products        -[#595959,plain]-^  restaurants    : "restaurant_id"
+@enduml

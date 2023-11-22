@@ -1,0 +1,6 @@
+range,AIR,LAND
+0-25,notFound,notFound
+25-40,notFound,notFound
+40-60,UKR,notFound
+60-80,notFound,notFound
+80-X,notFound,GEO

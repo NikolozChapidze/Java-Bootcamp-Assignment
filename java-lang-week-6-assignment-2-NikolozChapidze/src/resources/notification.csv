@@ -1,0 +1,7 @@
+ID,TYPE,RECEIVER,SUBORTXT,TEXT
+1,SMS,566123456,Hi
+2,SMS,566 12 34 56,how are you
+3,EMAIL,goderdzi@ww2.com,from father,How big have you become Son!
+4,EMAIL,goderdzi@ww2.com, ,How big have you become Son!
+5,EMAIL,ab@cdcom,subject,text
+6,SMS,566456123,Hi

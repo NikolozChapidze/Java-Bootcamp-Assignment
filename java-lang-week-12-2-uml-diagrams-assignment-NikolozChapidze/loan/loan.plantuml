@@ -1,0 +1,35 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class customers {
+   customer_name: varchar(225)
+   customer_lastname: varchar(225)
+   customer_address: varchar(225)
+   customer_pid: varchar(11)
+   customer_balance: integer
+   customer_id: bigint
+}
+class loan_shark {
+   shark_name: varchar(225)
+   shark_lastname: varchar(225)
+   shark_balance: integer
+   shark_address: varchar(225)
+   shark_pid: varchar(11)
+   shark_id: bigint
+}
+class loans {
+   shark_id: bigint
+   customer_id: bigint
+   amount: integer
+   start_date: date
+   end_date: date
+   interest_rate: integer
+   loan_id: bigint
+}
+
+loans       -[#595959,plain]-^  customers  : "customer_id"
+loans       -[#595959,plain]-^  loan_shark : "shark_id"
+@enduml
